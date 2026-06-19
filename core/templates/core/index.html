@@ -1,0 +1,261 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Portfolio — Python &amp; IA</title>
+  <meta name="description" content="Portfólio de desenvolvedor Python, IA e APIs. Estudante de ADS na PUCPR.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────────── -->
+<nav>
+  <a href="#hero" class="nav-logo">&lt;<span>dev</span>/&gt;</a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projetos">Projetos</a></li>
+    <li><a href="#experiencia">Experiência</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="#contato" class="nav-cta">Contratar</a>
+  <div class="nav-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ── HERO ────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-blob"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-eyebrow">🎓 ADS • PUCPR • Python Dev</span>
+        <h1 class="hero-title">
+          Transformando<br>dados em <em>inteligência</em>
+        </h1>
+        <p class="hero-sub">
+          Desenvolvedor Python com foco em IA, APIs REST e bancos de dados.
+          experiência profissional na área, terminando ADS na PUCPR e pronto para o próximo desafio.
+        </p>
+        <div class="hero-btns">
+          <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+          <a href="#contato"  class="btn btn-outline">Falar comigo</a>
+        </div>
+      </div>
+
+      <!-- Terminal animado -->
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="dot dot-r"></span>
+          <span class="dot dot-y"></span>
+          <span class="dot dot-g"></span>
+          <span class="terminal-title">~/dev — python</span>
+        </div>
+        <div class="terminal-body"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOBRE ────────────────────────────────────────── -->
+<section id="sobre" class="section section--alt">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="about-tag">👤 Quem sou eu</span>
+        <h2>Dev movido por dados e curiosidade</h2>
+        <p>
+          Sou estudante de Análise e Desenvolvimento de Sistemas na PUCPR, com experiência prática em Python,
+          treinamento de modelos de IA — tanto com imagens quanto com dados tabulares —, SQL e APIs REST.
+        </p>
+        <p>
+          Durante meu estágio de 8 meses, trabalhei de ponta a ponta: da coleta e preparação dos dados até o
+          deploy dos modelos, passando pela criação e documentação de endpoints no Postman.
+        </p>
+        <p>
+          Também trago base sólida em Java pela faculdade e pela Alura, e tenho familiaridade com PHP legado em
+          projetos de manutenção.
+        </p>
+      </div>
+      <div class="about-facts">
+        <div class="fact-card">
+          <span class="fact-icon">🎓</span>
+          <div>
+            <h4>ADS — PUCPR</h4>
+            <p>Cursando Análise e Desenvolvimento de Sistemas, com conclusão prevista em breve.</p>
+          </div>
+        </div>
+        <div class="fact-card">
+          <span class="fact-icon">💼</span>
+          <div>
+            <h4>Experiência Profissional</h4>
+            <p>Experiência real com Python, IA, SQL, PHP e APIs em ambiente profissional.</p>
+          </div>
+        </div>
+        <div class="fact-card">
+          <span class="fact-icon">🤖</span>
+          <div>
+            <h4>IA aplicada</h4>
+            <p>Treinamento de modelos com imagens e dados tabulares para soluções de negócio.</p>
+          </div>
+        </div>
+        <div class="fact-card">
+          <span class="fact-icon">☕</span>
+          <div>
+            <h4>Estudos Complementares</h4>
+            <p>Formação complementar em html, css, JS, SQL e Java com projetos práticos e certificados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ───────────────────────────────────────── -->
+<section id="skills" class="section">
+  <div class="container">
+    <span class="section-label">Tecnologias</span>
+    <h2 class="section-title">Stack &amp; habilidades</h2>
+    <p class="section-sub">Ferramentas que uso no dia a dia e estudei a fundo.</p>
+
+    <div class="skills-grid">
+      {% for sk in skills %}
+      <div class="skill-card">
+        <div class="skill-top">
+          <span class="skill-name">{{ sk.icon }} {{ sk.name }}</span>
+          <span class="skill-pct">{{ sk.level }}%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" data-width="{{ sk.level }}"></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<!-- ── DEVOPS BANNER ────────────────────────────────── -->
+<section class="section devops-banner">
+  <div class="container">
+    <span class="section-label">Infraestrutura</span>
+    <h2 class="section-title" style="margin-bottom:2rem">DevOps &amp; Ambiente de Trabalho</h2>
+    <div class="devops-grid">
+      <div class="devops-card">
+        <div class="devops-icon">🐳</div>
+        <h3>Docker &amp; Containers</h3>
+        <p>Containerização de aplicações e modelos de IA, criação de Dockerfiles, volumes e redes. Ambientes isolados para treino e deploy.</p>
+      </div>
+      <div class="devops-card">
+        <div class="devops-icon">🐙</div>
+        <h3>Git &amp; GitHub</h3>
+        <p>Versionamento diário com branches, pull requests e histórico limpo de commits. Repositórios organizados e colaboração em equipe.</p>
+      </div>
+      <div class="devops-card">
+        <div class="devops-icon">🐧</div>
+        <h3>Linux &amp; Servidores</h3>
+        <p>Acesso a servidores remotos via SSH, transferência de arquivos, execução de scripts e gerenciamento de ambiente direto no terminal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJETOS ─────────────────────────────────────── -->
+<section id="projetos" class="section section--alt">
+  <div class="container">
+    <span class="section-label">O que já fiz</span>
+    <h2 class="section-title">Projetos em destaque</h2>
+    <p class="section-sub">Trabalhos desenvolvidos durante o estágio e na faculdade.</p>
+
+    <div class="projects-grid">
+      {% for p in projects %}
+      <div class="project-card">
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.desc }}</p>
+        <div class="project-tags">
+          {% for t in p.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIÊNCIA ──────────────────────────────────── -->
+<section id="experiencia" class="section">
+  <div class="container">
+    <span class="section-label">Trajetória</span>
+    <h2 class="section-title" style="margin-bottom:2.5rem">Experiência &amp; Formação</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2025 – 2026 • 8 meses</div>
+        <h3>Estagiário — Desenvolvedor Python &amp; IA</h3>
+        <p class="co">Empresa de Tecnologia</p>
+        <p>
+          Desenvolvimento e treinamento de modelos de IA com imagens e dados tabulares.
+          Criação e documentação de endpoints REST com Postman. Consultas e manutenção
+          de banco de dados SQL. Manutenção de sistemas PHP legado.
+        </p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2022 – Atual</div>
+        <h3>Análise e Desenvolvimento de Sistemas</h3>
+        <p class="co">PUCPR — Pontifícia Universidade Católica do Paraná</p>
+        <p>
+          Formação em ADS com ênfase em programação orientada a objetos (Java),
+          banco de dados, engenharia de software e desenvolvimento web.
+        </p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Contínuo</div>
+        <h3>Formações Complementares</h3>
+        <p class="co">Plataforma Alura</p>
+        <p>
+          Estudos aprofundados em html, css, js, sql e java com projetos práticos,
+          POO, Spring e certificados de conclusão.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTATO ──────────────────────────────────────── -->
+<section id="contato" class="section section--alt">
+  <div class="container">
+    <div class="contact-box">
+      <h2>Vamos trabalhar juntos? 🚀</h2>
+      <p>
+        Estou disponível para oportunidades de emprego — CLT, PJ ou estágio avançado.
+        Manda um oi, será um prazer conversar!
+      </p>
+      <div class="contact-links">
+        <a href="PauloMateusDev@hotmail.com" class="contact-link primary">
+          ✉️ Enviar e-mail
+        </a>
+        <a href="https://www.linkedin.com/in/paulo-mateus-d/" target="_blank" class="contact-link">
+          💼 LinkedIn
+        </a>
+        <a href="https://github.com/pauloranger123" target="_blank" class="contact-link">
+          🐙 GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <p>Feito com <span>♥</span> e Python — &copy; {% now "Y" %} Paulo Mateus</p>
+  </div>
+</footer>
+
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
